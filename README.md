@@ -1,15 +1,25 @@
 # Assignment 1
 
 ## Contents 
-1. [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b1f3def711d084865b18c11491efe0243267f806/agents.py) file covering the Agents practical
-2. agent_framework.py for the model.py file
-3. [communicating.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/communicating.py) file covering the Communicating practical
-4. [IO.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/IO.py) file covering the I/O practical
-5. [animation.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/animation.py) file covering Animation practical
-6. agentframework.py for the animation.py file
-7. [GUI.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/GUI.py) file covering GUI practical
-8. [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/webscraping.py) file covering Web Scraping practical
-10. [in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt) text file to be read in within the I/O practical
+1. Agent files: 
+   a) [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agents.py) file covering the Agents practical
+   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agent_framework.py) agent_framework file for the agents.py file
+2. IO files:
+   a) [IO.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/IO/IO.py) file covering the I/O practical 
+   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/IO/agent_framework.py) agent_framework file for the IO.py file
+3. Communcating files:
+   a) [communcating.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Communicating/communicating.py) file covering the Communicating practical
+   b)[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Communicating/agent_framework.py) agent_framework file for the communicating file
+4. Animation files:
+   a) [animation.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/animation/animation.py) file covering Animation practical
+   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/animation/agent_framework.py) agent_framework file covering the animation file
+5. GUI files:
+   a) [GUI.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/GUI/GUI.py) file covering GUI practical
+   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/GUI/agent_framework.py) agent_framework file for the GUI file
+6. Web scraping files:
+   a) [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Web%20Scraping/webscraping.py) file covering Web Scraping practical
+   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Web%20Scraping/agent_framework.py) agent_framework file for the Web Scraping file.
+7. [in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt) text file to be read in within the I/O practical
 
 This software uses an agent based model which captures behaviour within an environment. This assignment builds agents within a space and gets them to interact with each other. It can read in environmental data, randoised the order of the agent agents and get agents to interact with the enviornment. The model is then displayed as an animation and iniatlised with data from the web, the model is contained within a GUI.
 
@@ -28,7 +38,7 @@ This is the agent class for this model, initally the model uses the __init__ fun
 
 The model then implements a property attribute for x and y before a method method which relies on an if statement to move the x and y coordinates up or down by 1. 
 
-To run these models 
+To run these models within the command prompt 
 
 ## model.py
 The second commented out code produces an output file and has the function write_line_to_outputs which writes the number of agents out as a check. 
