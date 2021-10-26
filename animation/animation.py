@@ -123,7 +123,9 @@ def gen_function(b = [0]):
 
 #animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=10)
 animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
- 
+
+matplotlib.pyplot.show()
+
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
