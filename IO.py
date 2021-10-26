@@ -71,7 +71,7 @@ def distance_between(agents_row_a, agents_row_b):
 
 
 # Adding variables and creating agents
-num_of_agents = 100
+num_of_agents = 10
 num_of_iterations = 5
 neighbourhood = 20
 agents = []
