@@ -13,10 +13,27 @@
 
 This software uses an agent based model which captures behaviour within an environment. This assignment builds agents within a space and gets them to interact with each other. It can read in environmental data, randoised the order of the agent agents and get agents to interact with the enviornment. The model is then displayed as an animation and iniatlised with data from the web, the model is contained within a GUI.
 
-## model.py
-At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. The second commented out code produces an output file and has the function write_line_to_outputs which writes the number of agents out as a check. 
+# Agent file
+### agent.py
+At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run.
 
-Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run. The code them imports data ([in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt)) which will be used as the agents' environment- it does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
+The function distance_between takes two arbitary agents and calculates the distance between them. The code then establishes the two variables: the number of agents and the number of iterations and the empty list for the agents. The model then makes the agents by looping the number of agents and using the Agent method in the agent_framework. The agents are then looped through the number of iterations through the move method from agent_framework. The commented out code checks that they have successfully moved.
+
+Following this the model plots the scatter graph for the agents and prints out the location and store of the agents. 
+The whole model is timed and the time taken for it to run is printed at the end. 
+
+# agent_framework.py
+
+This is the agent class for this model, initally the model uses the __init__ function which is a constructor in object oriented concepts, it creates the agents using the random integer function to assign values to x and y.
+
+The model then implements a property attribute for x and y before a method method which relies on an if statement to move the x and y coordinates up or down by 1. 
+
+To run these models 
+
+## model.py
+The second commented out code produces an output file and has the function write_line_to_outputs which writes the number of agents out as a check. 
+
+ The code them imports data ([in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt)) which will be used as the agents' environment- it does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
 
 The function distance_between takes two arbitary agents and calculates the distance between them. The code then establishes the three variables: the number of agents, the number of iterations and the size of the neighbourhood. The model then makes the agents by looping the number of agents and using the Agent method in the agent_framework. The agents are then looped with the number of iterations, being shuffled to randomised the order which the agents are processed to ensure the wealth is evenly shared amongst agents, through the moving, eating and sharing with neighbours method from agent_framework. The commented out code was the check that the agents had shuffled and that they had successfully worked through the loop.
 
