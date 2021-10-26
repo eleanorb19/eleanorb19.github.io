@@ -2,18 +2,21 @@
 
 ## Contents 
 1. [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b1f3def711d084865b18c11491efe0243267f806/agents.py) file covering the Agents practical
-
 2. agent_framework.py for the model.py file
-3. animation.py file covering Animation, GUI and Web Scraping practicals
-4. agentframework.py for the animation.py file
-5. in.txt text file to be read in within the I/O practical
+3. [communicating.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/communicating.py) file covering the Communicating practical
+4. [IO.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/IO.py) file covering the I/O practical
+5. [animation.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/animation.py) file covering Animation practical
+6. agentframework.py for the animation.py file
+7. [GUI.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/GUI.py) file covering GUI practical
+8. [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/b209b3d40f697b14c81f74c9b350de9659eb4eea/webscraping.py) file covering Web Scraping practical
+10. [in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt) text file to be read in within the I/O practical
 
 This software uses an agent based model which captures behaviour within an environment. This assignment builds agents within a space and gets them to interact with each other. It can read in environmental data, randoised the order of the agent agents and get agents to interact with the enviornment. The model is then displayed as an animation and iniatlised with data from the web, the model is contained within a GUI.
 
 ## model.py
 At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. The second commented out code produces an output file and has the function write_line_to_outputs which writes the number of agents out as a check. 
 
-Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run. The code them imports data ([in.txt](https://github.com/eleanorb19/Project/files/7373848/in.txt)) which will be used as the agents' environment- it does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
+Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run. The code them imports data ([in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt)) which will be used as the agents' environment- it does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
 
 The function distance_between takes two arbitary agents and calculates the distance between them. The code then establishes the three variables: the number of agents, the number of iterations and the size of the neighbourhood. The model then makes the agents by looping the number of agents and using the Agent method in the agent_framework. The agents are then looped with the number of iterations, being shuffled to randomised the order which the agents are processed to ensure the wealth is evenly shared amongst agents, through the moving, eating and sharing with neighbours method from agent_framework. The commented out code was the check that the agents had shuffled and that they had successfully worked through the loop.
 
