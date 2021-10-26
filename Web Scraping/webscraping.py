@@ -182,16 +182,3 @@ end = time.perf_counter()
 print("time = " + str(end - start))
 
 tkinter.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
