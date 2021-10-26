@@ -97,7 +97,7 @@ matplotlib.pyplot.ylim(0, rows)
 matplotlib.pyplot.imshow(environment)
 for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)
-    matplotlib.pyplot.show()
+matplotlib.pyplot.show()
  
 for agents_row_a in agents:
     for agents_row_b in agents:
