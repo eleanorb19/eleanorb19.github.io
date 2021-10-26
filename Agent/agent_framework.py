@@ -27,7 +27,7 @@ class Agent():
         Creating a move method within the Agent class
         If statement against a random number between 0 and 1.
         If the number is less than 0.5 then the x or y coordinate will increase by 1
-        and vice versa for greater than 0.5. 
+        and decrease for greater than 0.5. 
         """
         if random.random() < 0.5:
             self._y = (self._y + 1) % 100 # Ensuring agents can wander around full environment
