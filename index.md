@@ -7,9 +7,9 @@ My code is split into a README file describing the code, 6 files with each separ
 ## Contents
 1) [README.md](https://github.com/eleanorb19/eleanorb19.github.io/blob/9ed51c68548a72690a9d999dea4a3904df87840b/README.md) file describing how the code is run and what it achieves. 
 
-2) Agent files: [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/agents.py) file covering the Agents practical
+2) Agent files: [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agents.py) file covering the Agents practical
 
-[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agents_framework.py) agent_framework for Agent practical
+[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agent_framework.py) agent_framework for Agent practical
 
 3) IO files: [IO.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/IO/IO.py) file covering the IO practical
 
