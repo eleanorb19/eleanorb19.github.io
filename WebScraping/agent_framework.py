@@ -17,7 +17,7 @@ class Agent():
         agents : list of agents 
         environment : list holding environment data
         rows : the length of the environment
-        cols : the length of the environment
+        cols : the length of the first row of the environment
         y : y coordinate of agent
         x : x coordinate of agent
         """
@@ -37,7 +37,8 @@ class Agent():
         self.rows = rows
         self.cols = cols
         self.i = i
-    #Printing and naming the agents so that they display information about their location and stores
+    #Printing and naming the agents so that they display information about 
+    # their location and stores
     def __str__(self):
         """
         Returns
@@ -66,7 +67,8 @@ class Agent():
         """
         Creating a move method within the Agent class
         If statement against a random number between 0 and 1.
-        If the number is less than 0.5 then the x or y coordinate will increase by 1
+        If the number is less than 0.5 then the x or y coordinate will 
+        increase by 1
         and vice versa for greater than 0.5. 
         """
         if random.random() < 0.5:
@@ -94,12 +96,14 @@ class Agent():
             self.environment[self._y][self._x] = 0
             #print("After eat", self.environment[self._y][self._x])
             #print(self)
-        #Agents sick up in a location if they've eaten more than 100 units
+        #Agents sick up their store in a location if they've eaten more than 
+        #100 units
         if self.store > 100:
             self.environment[self._y][self._x] += 100
             self.store = 0
             #print("Sick")
-            
+           
+    # Calculating distance between agents
     def distance_between(self, b):
         """
         Finds pythagorean distance between two agents
@@ -111,6 +115,7 @@ class Agent():
         """
         return (((self._x - b._x)**2) + ((self._y - b._y)**2))**0.5
     
+    # Creating a share with neighbours method with the Agent class
     def share_with_neighbours(self, neighbourhood):
         """
         The agent searches for close neighbours and shares resources with them.
@@ -122,20 +127,13 @@ class Agent():
         ----------
         neighbourhood : the distance parameter set.
         """ 
-        for i in range(len(self.agents)): # Loop through the agents in self.agents .
-            distance = self.distance_between(self.agents[i]) # Calculate the distance between self and the current other agent:
+        for i in range(len(self.agents)): # Loop through the agents in 
+        # self.agents .
+            distance = self.distance_between(self.agents[i]) # Calculate the 
+            # distance between self and the current other agent:
             if distance < neighbourhood:
                 total = self.store + self.agents[i].store
                 average = total / 2
                 self.store = average
                 self.agents[i].store = average
                 #print("sharing " + str(distance) + " " + str(average))
-         
-    
-    
-        
-            
-            
-            
-            
-       
