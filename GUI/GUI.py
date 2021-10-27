@@ -136,9 +136,9 @@ def update(frame_number):
             agents[i].share_with_neighbours(neighbourhood)
             
     # Creating a stopping condition for animation based on store
-    if agents[i].store < 0:
-        carry_on = False
-        print("stopping condition")
+    #if agents[i].store < 0:
+        #carry_on = False
+        #print("stopping condition")
     
     # Plot agents
     for i in range(num_of_agents):
