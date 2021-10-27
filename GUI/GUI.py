@@ -70,13 +70,14 @@ cols = len(environment[0])
 #print("rows", rows)
 #print("cols", cols)
 
+# Finding pythagorean distance between two agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
 
 # Adding variables and creating agents
 num_of_agents = 10
-num_of_iterations = 5
+num_of_iterations = 10
 neighbourhood = 20
 agents = []
 
@@ -84,14 +85,17 @@ agents = []
 for i in range(num_of_agents):
     agents.append(agent_framework.Agent(i, agents, environment, rows, cols))
 
-def run():
-    animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
-    canvas.draw()
 
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
 
-# This builds the main window ("root"); sets its title, then creates and lays out a matplotlib canvas 
+def run():
+    animation = matplotlib.animation.FuncAnimation(fig, update, interval =1, 
+    frames = gen_function, repeat=False)
+    canvas.draw()
+
+# This builds the main window ("root"); sets its title, then creates and lays 
+# out a matplotlib canvas 
 # embedded within our window and associated with fig, our matplotlib figure.
 root = tkinter.Tk()
 root.wm_title("Model")
@@ -103,8 +107,6 @@ root.config(menu=menu)
 model_menu = tkinter.Menu(menu)
 menu.add_cascade(label="Model", menu=model_menu)
 model_menu.add_command(label="Run model", command=run)
-
-#ax.set_autoscale_on(False)
 
 carry_on = True
 
@@ -122,7 +124,8 @@ def update(frame_number):
     # Commented out code is for checking code has been successful
     for j in range(num_of_iterations):
         #print("Iteration", j) 
-        random.shuffle(agents) # Randomising the order in which agents are processed
+        random.shuffle(agents) # Randomising the order in which agents are 
+        # processed
         for i in range(num_of_agents):
             # print(i, "Before move", agents[i]._x, agents[i]._y)
             agents[i].move() # Adjusting the model to use agentframework
@@ -132,11 +135,12 @@ def update(frame_number):
             # print(i, "Store after eat", agents[i].store)
             agents[i].share_with_neighbours(neighbourhood)
             
-    # Creating a stopping condition for animation
-    if random.random() < 0.1:
+    # Creating a stopping condition for animation based on store
+    if agents[i].store < 0:
         carry_on = False
         print("stopping condition")
     
+    # Plot agents
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)  
 		
@@ -146,7 +150,21 @@ def gen_function(b = [0]):
     while (a < num_of_iterations) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
+        
+# Printing agents to provide location and store        
+for i in range(num_of_agents):
+    print(agents[i])
 
+
+end = time.perf_counter()
+
+# Printing the time taken for code
+
+print("time = " + str(end - start))
+
+tkinter.mainloop()
+'''
+# Finding the distance using distance_between function
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
@@ -157,11 +175,4 @@ with open("data.txt", "w") as f:
         f.write(str(agents[i]))
         f.write("\n")
         
-# Printing agents to provide location and store        
-for i in range(num_of_agents):
-    print(agents[i])
-    
-end = time.perf_counter()
-print("time = " + str(end - start))
-
-tkinter.mainloop()
+'''   
