@@ -27,7 +27,8 @@ class Agent():
         self.cols = cols
         self.i = i
     
-    # Printing and naming the agents so that they display information about their location and stores
+    # Printing and naming the agents so that they display information about 
+    # their location and stores
     def __str__(self):
         """
         Returns
@@ -53,11 +54,13 @@ class Agent():
         """
         Creating a move method within the Agent class
         If statement against a random number between 0 and 1.
-        If the number is less than 0.5 then the x or y coordinate will increase by 1
+        If the number is less than 0.5 then the x or y coordinate will 
+        increase by 1
         and vice versa for greater than 0.5. 
         """
         if random.random() < 0.5:
-            self._y = (self._y + 1) % self.rows # Ensuring agents can wander around full environment
+            self._y = (self._y + 1) % self.rows # Ensuring agents can wander 
+            # around full environment
         else:
             self._y = (self._y - 1) % self.rows
 
@@ -113,8 +116,10 @@ class Agent():
         ----------
         neighbourhood : the distance parameter set.
         """
-        for i in range(len(self.agents)): # Loop through the agents in self.agents .
-            distance = self.distance_between(self.agents[i]) # Calculate the distance between self and the current other agent:
+        for i in range(len(self.agents)): # Loop through the agents in 
+        # self.agents .
+            distance = self.distance_between(self.agents[i]) # Calculate the 
+            # distance between self and the current other agent:
             if distance < neighbourhood:
                 total = self.store + self.agents[i].store
                 average = total / 2
