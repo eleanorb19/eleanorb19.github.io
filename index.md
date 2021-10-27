@@ -27,8 +27,8 @@ My code is split into a README file describing the code, 6 files with each separ
 
 [agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/GUI/agent_framework.py) agent_framework for GUI practical
 
-7) Web Scraping file: [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/WebScraping/webscraping.py) file covering the Web Scraping practical
+7) Web Scraping file: [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/9d9134e3175b376589edbb58e12f6207df44416b/WebScraping/webscraping.py) file covering the Web Scraping practical
 
-[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/WebScraping/agent_framework.py) agent_framework covering Web Scraping practical
+[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/9d9134e3175b376589edbb58e12f6207df44416b/WebScraping/agent_framework.py) agent_framework covering Web Scraping practical
 
 8) [in.txt](https://github.com/eleanorb19/eleanorb19.github.io/blob/bae5e43df58f38fc9224b45dc1403dde3319ce49/in.txt) data file for IO practical onwards
