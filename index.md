@@ -2,7 +2,7 @@
 
 This software uses an agent based model which captures behaviour within an environment. This assignment builds agents within a space and gets them to interact with each other. It can read in environmental data, randoised the order of the agent agents and get agents to interact with the enviornment. The model is then displayed as an animation and iniatlised with data from the web, the model is contained within a GUI.
 
-My code is split into 7 files with each separate pratical in. 
+My code is split into 6 files with each separate pratical in and then the text file to be used in IO practical onwards.
 
 ## Contents
 1) Agent files: [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/agents.py) file covering the Agents practical
