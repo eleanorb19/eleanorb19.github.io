@@ -1,5 +1,7 @@
 # Assignment 1
 
+To return to [home](https://eleanorb19.github.io/) page
+
 ## Agent file
 ### agent.py
 At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run.
