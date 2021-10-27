@@ -31,6 +31,7 @@ print(a.y, a.x)
 random.seed(0)
 environment = []
 
+# Finding pythagorean distance between two agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
@@ -57,8 +58,9 @@ matplotlib.pyplot.xlim(0, 100)
 matplotlib.pyplot.ylim(0, 100)
 for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)
-    matplotlib.pyplot.show()
+matplotlib.pyplot.show()
  
+# Finding the distance using distance_between function
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
@@ -68,5 +70,8 @@ for i in range(num_of_agents):
     print(agents[i])
     
 end = time.perf_counter()
+
+# Printing the time taken for code
 print("time = " + str(end - start))
+
 
