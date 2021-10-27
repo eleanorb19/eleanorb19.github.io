@@ -14,6 +14,7 @@ import fileinput
 import sys
 import time
 
+
 # Checking the time taken for the code to run
 start = time.perf_counter()
 
@@ -63,6 +64,7 @@ cols = len(environment[0])
 #print("rows", rows)
 #print("cols", cols)
 
+# Finding pythagorean distance between two agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
@@ -73,6 +75,7 @@ num_of_iterations = 5
 neighbourhood = 20
 agents = []
 
+
 # Make the agents
 for i in range(num_of_agents):
     agents.append(agent_framework.Agent(i, agents, environment, rows, cols))
@@ -81,7 +84,8 @@ for i in range(num_of_agents):
 # Commented out code is for checking code has been successful
 for j in range(num_of_iterations):
     #print("Iteration", j) 
-    random.shuffle(agents) # Randomising the order in which agents are processed
+    random.shuffle(agents) # Randomising the order in which agents are 
+    # processed
     for i in range(num_of_agents):
         # print(i, "Before move", agents[i]._x, agents[i]._y)
         agents[i].move() # Adjusting the model to use agentframework
@@ -92,6 +96,8 @@ for j in range(num_of_iterations):
         agents[i].share_with_neighbours(neighbourhood)
 
 # Producing plot for agents
+# Begin by setting limits of plots with cols and rows
+# Then plot the environment before plotting the coordinates for the agents
 matplotlib.pyplot.xlim(0, cols)
 matplotlib.pyplot.ylim(0, rows)
 matplotlib.pyplot.imshow(environment)
@@ -99,6 +105,7 @@ for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)
 matplotlib.pyplot.show()
  
+# Finding the distance using distance_between function
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
@@ -114,5 +121,7 @@ for i in range(num_of_agents):
     print(agents[i])
     
 end = time.perf_counter()
+
+# Printing the time taken for code
 print("time = " + str(end - start))
 
