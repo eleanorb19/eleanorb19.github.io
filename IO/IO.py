@@ -64,22 +64,23 @@ cols = len(environment[0])
 #print("rows", rows)
 #print("cols", cols)
 
-
+# Finding pythagorean distance between two agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
 
 
 # Adding variables and creating agents
-num_of_agents = 10
+num_of_agents = 100
 num_of_iterations = 5
+neighbourhood = 20
 agents = []
 
 # Make the agents
 for i in range(num_of_agents):
     agents.append(agent_framework.Agent(i, environment, rows, cols))
 
-# Moving and eating the agents
+# Moving, eating and sharing with neighbours the agents
 # Commented out code is for checking code has been successful
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
@@ -91,6 +92,8 @@ for j in range(num_of_iterations):
         # print(i, "Store after eat", agents[i].store)
 
 # Producing plot for agents
+# Begin by setting limits of plots with cols and rows
+# Then plot the environment before plotting the coordinates for the agents
 matplotlib.pyplot.xlim(0, cols)
 matplotlib.pyplot.ylim(0, rows)
 matplotlib.pyplot.imshow(environment)
@@ -98,6 +101,7 @@ for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)
 matplotlib.pyplot.show()
  
+# Finding the distance using distance_between function
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
@@ -113,5 +117,6 @@ for i in range(num_of_agents):
     print(agents[i])
     
 end = time.perf_counter()
-print("time = " + str(end - start))
 
+# Printing the time taken for code
+print("time = " + str(end - start))
