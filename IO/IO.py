@@ -79,7 +79,7 @@ agents = []
 for i in range(num_of_agents):
     agents.append(agent_framework.Agent(i, environment, rows, cols))
 
-# Moving, eating and sharing with neighbours the agents
+# Moving and eating the agents
 # Commented out code is for checking code has been successful
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
