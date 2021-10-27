@@ -64,13 +64,14 @@ cols = len(environment[0])
 #print("rows", rows)
 #print("cols", cols)
 
+# Finding pythagorean distance between two agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
 
 # Adding variables and creating agents
-num_of_agents = 10
-num_of_iterations = 5
+num_of_agents = 100
+num_of_iterations = 10
 neighbourhood = 20
 agents = []
 
@@ -86,14 +87,22 @@ for i in range(num_of_agents):
 carry_on = True
 
 def update(frame_number):
+    # Points are cleared for each iteraction 
     fig.clear()
     global carry_on
     
+    # Begin by setting limits of plots with cols and rows
+    # Then plot the environment before plotting the coordinates for the agents
+    matplotlib.pyplot.imshow(environment)
+    matplotlib.pyplot.xlim(0, cols)
+    matplotlib.pyplot.ylim(0, rows)
+        
     # Moving, eating and sharing with neighbours the agents
     # Commented out code is for checking code has been successful
     for j in range(num_of_iterations):
         #print("Iteration", j) 
-        random.shuffle(agents) # Randomising the order in which agents are processed
+        random.shuffle(agents) # Randomising the order in which agents are 
+        # processed
         for i in range(num_of_agents):
             # print(i, "Before move", agents[i]._x, agents[i]._y)
             agents[i].move() # Adjusting the model to use agentframework
@@ -103,16 +112,14 @@ def update(frame_number):
             # print(i, "Store after eat", agents[i].store)
             agents[i].share_with_neighbours(neighbourhood)
             
-    # Creating a stopping condition for animation
-    if random.random() < 0.1:
+    # Creating a stopping condition for animation based on store
+    if agents[i].store < 0:
         carry_on = False
         print("stopping condition")
     
+    # Plotting the agents
     for i in range(num_of_agents):
-        matplotlib.pyplot.imshow(environment)
-        matplotlib.pyplot.xlim(0, cols)
-        matplotlib.pyplot.ylim(0, rows)
-        matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)  
+       matplotlib.pyplot.scatter(agents[i]._x,agents[i]._y)  
 		
 def gen_function(b = [0]):
     a = 0
@@ -121,11 +128,14 @@ def gen_function(b = [0]):
         yield a			# Returns control and waits next call.
         a = a + 1
 
-#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=10)
-animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
-
+#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, 
+# repeat=False, frames=10)
+animation = matplotlib.animation.FuncAnimation(fig, update, interval =1, 
+                                    frames = gen_function, repeat=False,)
+ 
 matplotlib.pyplot.show()
 
+# Finding the distance using distance_between function
 for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
@@ -141,5 +151,7 @@ for i in range(num_of_agents):
     print(agents[i])
     
 end = time.perf_counter()
+
+# Printing the time taken for code
 print("time = " + str(end - start))
 
