@@ -1,27 +1,5 @@
 # Assignment 1
 
-## Contents 
-1. Agent files: [agents.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Agent/agents.py) file covering the Agents practical
-2. [agent_framework.py]  https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Communicating/agent_framework.py) file for the agents.py file
-2. IO files:
-   a) [IO.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/IO/IO.py) file covering the I/O practical 
-   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/IO/agent_framework.py) agent_framework file for the IO.py file
-3. Communcating files:
-   a) [communcating.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Communicating/communicating.py) file covering the Communicating practical
-   b)[agent_framework.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Communicating/agent_framework.py) agent_framework file for the communicating file
-4. Animation files:
-   a) [animation.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/animation/animation.py) file covering Animation practical
-   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/animation/agent_framework.py) agent_framework file covering the animation file
-5. GUI files:
-   a) [GUI.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/GUI/GUI.py) file covering GUI practical
-   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/GUI/agent_framework.py) agent_framework file for the GUI file
-6. Web scraping files:
-   a) [webscraping.py](https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Web%20Scraping/webscraping.py) file covering Web Scraping practical
-   b) [agent_framework.py] (https://github.com/eleanorb19/eleanorb19.github.io/blob/62231a945345df19619f43a9e16b0bb8b447d958/Web%20Scraping/agent_framework.py) agent_framework file for the Web Scraping file.
-7. [in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt) text file to be read in within the I/O practical
-
-This software uses an agent based model which captures behaviour within an environment. This assignment builds agents within a space and gets them to interact with each other. It can read in environmental data, randoised the order of the agent agents and get agents to interact with the enviornment. The model is then displayed as an animation and iniatlised with data from the web, the model is contained within a GUI.
-
 # Agent file
 ### agent.py
 At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run.
@@ -37,16 +15,30 @@ This is the agent class for this model, initally the model uses the __init__ fun
 
 The model then implements a property attribute for x and y before a method method which relies on an if statement to move the x and y coordinates up or down by 1. 
 
-To run these models within the command prompt 
+To run these models within the command prompt $ python agent.py FIX THIS
 
-## model.py
-The second commented out code produces an output file and has the function write_line_to_outputs which writes the number of agents out as a check. 
+# IO file
+## IO.py
 
- The code them imports data ([in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt)) which will be used as the agents' environment- it does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
+This code is the same as the agent.py code but does have a few additions these are:
+
+The  commented out code about producing an output files uses the the function write_line_to_outputs which writes the number of agents out as a check. 
+
+The addition of importing data from ([in.txt](https://github.com/eleanorb19/eleanorb19.github.io/files/7416359/in.txt)) and using this within the agent environment. It does this through creating an empty list and shifting the data into a 2D list. The commented out code is used to check that the code has been run correctly. 
+
+The code finds the number of rows and columns of the environment and then uses this to create the agents with the method in agent_framework. 
+
+The agents are then looped with the number of iterations through the moving and eating methods from agent_framework.
+
+The environment is written out as a file which is called 'data.txt' which contains the agent ID, location and stores. This is also printed out to check whether all the agents have been processed.
+
+# agent_framework.py
+
+This is the agent class for the IO file it 
 
 The function distance_between takes two arbitary agents and calculates the distance between them. The code then establishes the three variables: the number of agents, the number of iterations and the size of the neighbourhood. The model then makes the agents by looping the number of agents and using the Agent method in the agent_framework. The agents are then looped with the number of iterations, being shuffled to randomised the order which the agents are processed to ensure the wealth is evenly shared amongst agents, through the moving, eating and sharing with neighbours method from agent_framework. The commented out code was the check that the agents had shuffled and that they had successfully worked through the loop.
 
-Following this the model plots the scatter graph for the agents. The environment is written out as a file which is called 'data.txt' which contains the agent ID, location and stores. This is also printed out to check whether all the agents have been processed. Finally the whole code has been timed to check how long each process takes. 
+Following this the model plots the scatter graph for the agents.  Finally the whole code has been timed to check how long each process takes. 
 
 Here are some examples of the time taken for different agents, iterations which I have turned into a plot attached to this file. 
 
