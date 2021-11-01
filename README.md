@@ -2,6 +2,16 @@
 
 To return to [home](https://eleanorb19.github.io/) page
 
+### Running the code
+The following two codes can be run within the command line using
+```
+python agent.py  
+```
+or
+``` 
+python IO.py
+```
+
 ## Agent file
 ### agent.py
 At the start of the code there are checks for checking that the model and agent_framework are connected and that the move function works. Within the model.py file the code sets a random seed, this allows me to check that the code has worked as it will produce the same random numbers each time it is run.
@@ -16,8 +26,6 @@ The whole model is timed and the time taken for it to run is printed at the end.
 This is the agent class for this model, initally the model uses the __init__ function which is a constructor in object oriented concepts, it creates the agents using the random integer function to assign values to x and y.
 
 The model then implements a property attribute for x and y before a move method which relies on an if statement to move the x and y coordinates up or down by 1. 
-
-To run these models within the command prompt $ python agent.py FIX THIS
 
 ## IO file
 ### IO.py
@@ -48,6 +56,13 @@ There is an eat method which begins with test which check that the method works 
 
 Finally, there is a distance_between method which find the pythagorean distance between two agents.
 
+## Running the code
+
+The following codes are all run the command line using:
+```
+python animation.py 50 10 20 
+```
+where in this example 50 is the number of agents, 10 is the number of iterations and 20 is the size of the neighbourhood. If no values are added, too many or too few values are added or something is typed which cannot be an integer then the code will produce an exception and use the values 10, 3 and 20 as provided in the code.
 ## Communicating file
 
 ### communicating.py
@@ -63,7 +78,7 @@ This is the same as the previous agent_framework but with the addition of the sh
 
 This code is the same but has the addition of animating the model. It uses a stopping condition based on the size of the store for the agents. 
  
-The agent_framework is the same as for communicating. 
+The agent_framework is the same as for communicating.
 
 ## GUI files
 ### GUI.py
@@ -121,6 +136,5 @@ For 50 agents, 20 iterations and 20 neighbourhoods time taken = 0.43
 For 10 agents, 20 iterations and 20 neighbourhoods time taken = 0.24
 
 ![Animation run time](https://user-images.githubusercontent.com/90636185/137923678-7d9cb111-9a11-42d6-b64c-1fbbc6437fd9.png)
-
 
 
