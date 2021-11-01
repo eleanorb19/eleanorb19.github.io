@@ -19,6 +19,8 @@ import tkinter
 import requests
 import bs4
 import time
+from tkinter import ttk
+import sys
 
 # Checking the time taken for the code to run
 start = time.perf_counter()
@@ -85,10 +87,13 @@ def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
 
-# Adding variables and creating agents
-num_of_agents = 20
-num_of_iterations = 10
-neighbourhood = 20
+# Adding variables and creating agents using sys for command line
+num_of_agents = int(sys.argv[1])
+num_of_iterations = int(sys.argv[2])
+neighbourhood = int(sys.argv[3])
+# num_of_agents = 20
+# num_of_iterations = 10
+# neighbourhood = 20
 agents = []
 
 # Make the agents
@@ -99,8 +104,8 @@ for i in range(num_of_agents):
     y, x))
 
 # Checks whether agents have been successfully initalised 
-for i in range(num_of_agents):
-    print(agents[i])
+# for i in range(num_of_agents):
+#     print(agents[i])
  
 # Creating animation plot
 def run():
@@ -124,6 +129,8 @@ root.config(menu=menu)
 model_menu = tkinter.Menu(menu)
 menu.add_cascade(label="Model", menu=model_menu)
 model_menu.add_command(label="Run model", command=run)
+model_menu.add_command(label="End model", command=root.quit)
+
 
 carry_on = True	
 	
@@ -175,6 +182,8 @@ end = time.perf_counter()
 
 # Printing the time taken for code
 print("time = " + str(end - start))
+
+# Code to end the code after animation
 
 tkinter.mainloop()
 
