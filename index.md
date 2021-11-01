@@ -4,6 +4,6 @@ This code uses an agent based model which captures behaviour within an environme
 
 My code is split into a README file describing the code, 6 files with each separate practical in and then the text file to be used in IO practical onwards. 
 
-My github page can be found [here](https://github.com/eleanorb19/eleanorb19.github.io).
+These files can be found [here](https://github.com/eleanorb19/eleanorb19.github.io).
 
 Within each practical file there is a separated agent_framework file which corresponds to the practical. 
