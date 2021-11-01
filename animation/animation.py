@@ -69,13 +69,16 @@ def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a._y - agents_row_b._y)**2) +
         ((agents_row_a._x - agents_row_b._x)**2))**0.5
 
-# Adding variables and creating agents
-num_of_agents = int(sys.argv[1])
-num_of_iterations = int(sys.argv[2])
-neighbourhood = int(sys.argv[3])
-# num_of_agents = 20
-# num_of_iterations = 10
-# neighbourhood = 20
+# Adding variables and creating agents using sys for command line
+if len(sys.argv) != 4:
+    print("Exception- will use provided variables")
+    num_of_agents = 10
+    num_of_iterations = 3
+    neighbourhood = 20
+else:
+    num_of_agents = int(sys.argv[1])
+    num_of_iterations = int(sys.argv[2])
+    neighbourhood = int(sys.argv[3])
 agents = []
 
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
