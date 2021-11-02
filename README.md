@@ -2,8 +2,15 @@
 
 To return to [home](https://eleanorb19.github.io/) page
 
+The basis of the code is:
+Move: This method moves x and y coordinates up or down by 1 by random numbers.
+
+Eat: This method makes the agents eat what is left of the environment.
+
+Sharing with neighbours: the agents search for close neighbours and then shares resources with them. 
+
 ### Running the code
-The following two codes can be run within the command line using
+The agent and IO code can be run within the command line using
 ```
 python agent.py  
 ```
@@ -85,7 +92,7 @@ The agent_framework is the same as for communicating.
 
 This code builds a GUI where the model plays in a window with a menu to run the model. This is completed through the def run() and then the root and menu to create the canvas. 
 
-The agent_framework is the same as for communicating.
+The agent_framework is the same as for communicating. 
 
 ## Web Scraping
 ### webscraping.py
@@ -96,12 +103,14 @@ This model is the same as the GUI code but begins by adjusting the agent initial
 This follows the same method as the communicating agent_framework but has additional y and x parameters within the __init__ function. This is to check that the code will still run even if there are missing x and y values from the data. This is the only difference from the previous agent_framework model.
 
 
-The basis of the code is:
-Move: This method moves x and y coordinates up or down by 1 by random numbers.
-Eat: This method makes the agents eat what is left of the environment.
-Sharing with neighbours: the agents search for close neighbours and then shares resources with them. 
+### Running models
+To run the GUI and Web Scraping models in the command line can use:
+```
+python GUI.py 50 5 20
+```
+for example. This will produce a main window with a drop down menu where the user can select 'Run model' which will begin the animation or 'End model' which will shut down the animation and end the code. 
 
-
+## Timing
 Here are some examples of the time taken for different agents, iterations which I have turned into a plot attached to this file for the communicating.py file.
 
 communicating.py file- 
