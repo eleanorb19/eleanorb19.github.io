@@ -79,7 +79,7 @@ def distance_between(agents_row_a, agents_row_b):
 if len(sys.argv) != 4:
     print("Exception- will use provided variables")
     num_of_agents = 10
-    num_of_iterations = 3
+    num_of_iterations = 5
     neighbourhood = 20
 else:
     num_of_agents = int(sys.argv[1])
